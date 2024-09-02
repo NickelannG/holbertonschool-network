@@ -109,7 +109,7 @@ What is an IP address?
 3. Is a number that network devices use to connect to networks
 
 ## Task 3
-![Task 3 image](basics_0/Task_3.jpg)
+!([basics_0/Task_3.jpg](https://github.com/NickelannG/holbertonschool-network/blob/master/basics_0/Task_3.jpg?raw=true))
 Let’s fill the empty parts in the drawing above.
 
 Questions:
