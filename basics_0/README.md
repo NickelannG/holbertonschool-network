@@ -110,6 +110,7 @@ What is an IP address?
 
 ## Task 3
 ![basics_0/Task_3.jpg](https://github.com/NickelannG/holbertonschool-network/blob/master/basics_0/Task_3.jpg?raw=true)
+
 Let’s fill the empty parts in the drawing above.
 
 Questions:
