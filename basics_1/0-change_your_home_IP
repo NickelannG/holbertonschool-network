@@ -1,9 +1,22 @@
 #!/usr/bin/env bash
 # configures an ubunutu server
 
-export HOSTALIASES=~/.hosts
-echo '127.0.0.2 localhost' > ~/.hosts
-echo '8.8.8.8 facebook.com' >> ~/.hosts
+# Backup the original /etc/hosts file
+sudo cp /etc/hosts /etc/hosts.backup
 
-ping -c 2 localhost
-ping -c 2 facebook.com
+# Add or update the entry for localhost
+sudo sed -i '/127.0.0.1\s*localhost/ c\127.0.0.2 localhost' /etc/hosts
+
+# Add the entry for facebook.com
+# Check if facebook.com is already in /etc/hosts
+if grep -q "facebook.com" /etc/hosts; then
+    sudo sed -i '/facebook.com/ c\8.8.8.8 facebook.com' /etc/hosts
+else
+    echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts > /dev/null
+fi
+
+echo "IP address configuration updated successfully."
+
+# Optional: Print the updated /etc/hosts file
+echo "Updated /etc/hosts file:"
+cat /etc/hosts
