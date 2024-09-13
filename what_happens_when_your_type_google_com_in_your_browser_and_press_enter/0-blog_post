@@ -1,0 +1,31 @@
+What Happens when you type "https://www.google.com" in your browser and hit enter?
+
+1. DNS Request
+The first step is domain name resolution. When you enter "https://www.google.com," your browser doesn’t immediately know the IP address of Google’s server. It makes a DNS (Domain Name System) request to translate the domain into an IP address. Your browser checks the cache for a record, and if none is found, it queries a DNS resolver, which contacts several DNS servers to find the IP address (e.g., 172.217.14.206).
+
+2. TCP/IP and Establishing a Connection
+Once the IP address is known, your browser initiates a TCP (Transmission Control Protocol) connection to the Google server over the IP (Internet Protocol). TCP is responsible for establishing a reliable connection between your browser and the server.
+
+3. Firewall
+Both your device and Google’s servers likely have firewalls to filter out unauthorized traffic or potential threats from incoming trafic.
+
+4. HTTPS and SSL/TLS Encryption
+Because the URL starts with https://, the connection is secured via SSL/TLS (Secure Sockets Layer / Transport Layer Security) encryption. This protects the user's privacy and secures data in transit.
+
+5. Load Balancer
+Google uses load balancers to distribute incoming traffic across multiple servers. The load balancer ensures that no single server is overwhelmed by traffic. It might distribute traffic using different set ups such as active-active, where all servers and load balancers are active at the same time, or active passive, where one one server or lload balancer is active at a time.
+
+6. Web Server
+Once your request reaches the web server, such as Nginx or Apache, the server processes the HTTP request. It serves web pages to clients on request over HTTP protocol.
+
+7. Application Server
+The web server passes your request to an application server which also delivers web content by enables interaction between user clients and server-side code.
+
+8. Database
+Finally, if the request requires retrieving data (such as user preferences, search history, or cached information), the application server queries a database. Once the data is retrieved, the application server sends it back to the web server, which formats the content (typically in HTML) and delivers it to your browser.
+
+9. Rendering in the Browser
+After the data is received, your browser parses the HTML, CSS, and JavaScript, builds the DOM (Document Object Model), and renders the page for users to interact with. At this point, the page is fully loaded, and you're ready to begin your search!
+
+Conclusion
+What seems like a simple request is actually a highly orchestrated interaction between multiple technologies. Each step plays a critical role in ensuring that the web page is delivered quickly, securely, and accurately. Understanding these processes not only strengthens your technical foundation but also makes you a stronger software engineer, capable of solving complex web stack problems.
